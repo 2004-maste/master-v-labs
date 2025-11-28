@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Consulting | Master-V Labs</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #2D2D2D;
+            background-image: url('../images/background.png');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.92);
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(10, 23, 78, 0.95);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #F5D042;
+        }
+
+        /* Service Hero */
+        .service-hero {
+            padding: 150px 0 80px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(10, 23, 78, 0.85) 0%, rgba(26, 42, 108, 0.85) 100%), url('../images/background.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .service-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-hero p {
+            font-size: 1.3rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        /* Service Details */
+        .service-details {
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(248, 249, 250, 0.92) 100%), url('../images/background.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .details-content h2 {
+            color: #0A174E;
+            margin-bottom: 2rem;
+            font-size: 2.2rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .feature-list li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #eee;
+            color: #555;
+        }
+
+        .feature-list li:before {
+            content: "✓ ";
+            color: #F5D042;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .tech-stack {
+            background: rgba(10, 23, 78, 0.05);
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid #F5D042;
+        }
+
+        .tech-stack h3 {
+            color: #0A174E;
+            margin-bottom: 1rem;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tech-tag {
+            background: #0A174E;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            padding: 4rem 0;
+            background: linear-gradient(135deg, rgba(10, 23, 78, 0.92) 0%, rgba(26, 42, 108, 0.92) 100%), url('../images/background.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #F5D042;
+            color: #0A174E;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            background: #ffdf5e;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(26, 26, 26, 0.95);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .details-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .service-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <img src="../images/logo.png" alt="Master-V Labs Logo">
+                <span>Master-V Labs</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html#services">Services</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="service-hero">
+        <div class="container">
+            <h1>Technical Consulting</h1>
+            <p>Expert guidance to help you choose the right technology for your project</p>
+        </div>
+    </section>
+
+    <section class="service-details">
+        <div class="container">
+            <div class="details-grid">
+                <div class="details-content">
+                    <h2>Technology Strategy & Planning</h2>
+                    <p>We provide expert advice to help you make informed technology decisions and plan your project successfully.</p>
+                    
+                    <h3>What We Offer:</h3>
+                    <ul class="feature-list">
+                        <li>Technology Stack Selection</li>
+                        <li>Project Planning & Architecture</li>
+                        <li>System Design & Documentation</li>
+                        <li>Code Review & Optimization</li>
+                        <li>Technical Due Diligence</li>
+                        <li>Development Process Setup</li>
+                        <li>Team Training & Mentoring</li>
+                        <li>Technical Feasibility Studies</li>
+                        <li>Never fail to ask us what you need</li>
+                    </ul>
+                </div>
+                
+                <div class="tech-stack">
+                    <h3>Our Expertise Areas</h3>
+                    <p>We provide consulting across various technologies which are more advanced and reliable!</p>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Need Technical Guidance?</h2>
+            <p>Let's plan your project with the right technology strategy</p>
+            <a href="../contact.html" class="cta-button">Get Consultation</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Master-V Labs. All rights reserved by R.M.V .</p>
+        </div>
+    </footer>
+</body>
+</html>
