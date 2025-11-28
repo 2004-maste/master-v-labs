@@ -1,0 +1,320 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #2D2D2D;
+    background-image: url('images/background.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-weight: 400;
+}
+
+/* Add overlay to make text more readable */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.92);
+    z-index: -1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation */
+nav {
+    background: rgba(10, 23, 78, 0.95);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-weight: 500;
+}
+
+.nav-links a:hover {
+    color: #F5D042;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    color: white;
+    padding: 150px 0 100px;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(10, 23, 78, 0.85) 0%, rgba(26, 42, 108, 0.85) 100%), url('images/background.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.95;
+    font-weight: 400;
+}
+
+.cta-button {
+    display: inline-block;
+    background: #F5D042;
+    color: #0A174E;
+    padding: 18px 35px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(245, 208, 66, 0.3);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    background: #ffdf5e;
+    box-shadow: 0 6px 20px rgba(245, 208, 66, 0.4);
+}
+
+/* Services Section - HOME PAGE ONLY */
+.services {
+    padding: 100px 0;
+    position: relative;
+    background-image: url('images/background.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.services h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #0A174E;
+    font-weight: 700;
+}
+
+.services-subtitle {
+    text-align: center;
+    font-size: 1.3rem;
+    color: #666;
+    margin-bottom: 4rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 400;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.service-card {
+    background-image: url('images/background.png');
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(10, 23, 78, 0.1);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #0A174E, #F5D042);
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    background: rgba(165, 235, 4, 0.98);
+}
+
+.service-card h3 {
+    color: #0A174E;
+    margin-bottom: 1.2rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.service-card p {
+    color: #555;
+    line-height: 1.7;
+    font-size: 1.05rem;
+    font-weight: 400;
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #0A174E;
+}
+
+/* Service Link Button */
+.service-link {
+    display: inline-block;
+    margin-top: 1.5rem;
+    color: #0A174E;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.service-link:hover {
+    color: #F5D042;
+    transform: translateX(5px);
+}
+
+/* CTA Section for Homepage */
+.cta-section {
+    padding: 100px 0;
+    text-align: center;
+    background: linear-gradient(135deg, rgba(10, 23, 78, 0.92) 0%, rgba(26, 42, 108, 0.92) 100%), url('images/background.png');
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.cta-section h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.cta-section p {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.95;
+    font-weight: 400;
+}
+
+/* Footer */
+footer {
+    background: rgba(26, 26, 26, 0.95);
+    color: white;
+    text-align: center;
+    padding: 2.5rem 0;
+    position: relative;
+}
+
+footer p {
+    font-weight: 400;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+    
+    .services h2 {
+        font-size: 2.5rem;
+    }
+    
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .service-card {
+        padding: 2rem;
+    }
+    
+    .cta-section h2 {
+        font-size: 2.2rem;
+    }
+    
+    /* Reduce background attachment on mobile for better performance */
+    body {
+        background-attachment: scroll;
+    }
+    
+    .hero {
+        background-attachment: scroll;
+    }
+    
+    .services {
+        background-attachment: scroll;
+    }
+    
+    .cta-section {
+        background-attachment: scroll;
+    }
+}

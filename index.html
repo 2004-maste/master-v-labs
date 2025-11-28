@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master-V Labs | Your Full-Service Developer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* New Font Family */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Continuous Animation Styles */
+        .hero-content h1 {
+            overflow: hidden;
+        }
+        
+        .animated-word {
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .animated-word:nth-child(1) { animation-delay: 0s; }
+        .animated-word:nth-child(2) { animation-delay: 0.5s; }
+        .animated-word:nth-child(3) { animation-delay: 1s; }
+        .animated-word:nth-child(4) { animation-delay: 1.5s; }
+        
+        /* Continuous floating animation */
+        @keyframes float {
+            0%, 100% { 
+                transform: translateY(0) rotate(0deg); 
+            }
+            25% { 
+                transform: translateY(-5px) rotate(0.5deg); 
+            }
+            50% { 
+                transform: translateY(0) rotate(0deg); 
+            }
+            75% { 
+                transform: translateY(5px) rotate(-0.5deg); 
+            }
+        }
+        
+        /* Subtle glow effect for words */
+        .animated-word:hover {
+            animation: glowFloat 2s ease-in-out infinite;
+        }
+        
+        @keyframes glowFloat {
+            0%, 100% { 
+                transform: translateY(0) rotate(0deg);
+                text-shadow: 0 0 5px rgba(245, 208, 66, 0.3);
+            }
+            50% { 
+                transform: translateY(-8px) rotate(1deg);
+                text-shadow: 0 0 15px rgba(245, 208, 66, 0.6);
+            }
+        }
+        
+        /* Pulsing effect for the entire hero text */
+        .hero-content h1 {
+            animation: gentlePulse 6s ease-in-out infinite;
+        }
+        
+        @keyframes gentlePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+        
+        /* Moving background gradient */
+        .hero {
+            background: linear-gradient(135deg, 
+                rgba(10, 23, 78, 0.85) 0%, 
+                rgba(26, 42, 108, 0.85) 50%, 
+                rgba(10, 23, 78, 0.85) 100%), 
+                url('images/background.png');
+            background-size: cover, cover;
+            background-position: center, center;
+            animation: gradientShift 8s ease-in-out infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% {
+                background: linear-gradient(135deg, 
+                    rgba(10, 23, 78, 0.85) 0%, 
+                    rgba(26, 42, 108, 0.85) 50%, 
+                    rgba(10, 23, 78, 0.85) 100%), 
+                    url('images/background.png');
+            }
+            50% {
+                background: linear-gradient(135deg, 
+                    rgba(26, 42, 108, 0.85) 0%, 
+                    rgba(10, 23, 78, 0.85) 50%, 
+                    rgba(26, 42, 108, 0.85) 100%), 
+                    url('images/background.png');
+            }
+        }
+        
+        /* CTA button continuous animation */
+        .cta-button {
+            animation: pulseGlow 2s ease-in-out infinite, float 3s ease-in-out infinite;
+        }
+        
+        @keyframes pulseGlow {
+            0%, 100% { 
+                box-shadow: 0 4px 15px rgba(245, 208, 66, 0.3);
+            }
+            50% { 
+                box-shadow: 0 6px 25px rgba(245, 208, 66, 0.6), 0 0 20px rgba(245, 208, 66, 0.4);
+            }
+        }
+        
+        /* Service icons continuous rotation */
+        .service-icon {
+            display: inline-block;
+            animation: gentleRotate 4s ease-in-out infinite;
+        }
+        
+        @keyframes gentleRotate {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            25% { transform: rotate(5deg) scale(1.1); }
+            50% { transform: rotate(0deg) scale(1); }
+            75% { transform: rotate(-5deg) scale(1.1); }
+        }
+        
+        /* Service cards continuous subtle movement */
+        .service-card {
+            animation: cardFloat 6s ease-in-out infinite;
+            transition: all 0.3s ease;
+        }
+        
+        @keyframes cardFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        
+        .service-card:hover {
+            animation: cardHover 1s ease-in-out infinite;
+            transform: translateY(-10px) scale(1.05);
+        }
+        
+        @keyframes cardHover {
+            0%, 100% { transform: translateY(-10px) scale(1.05); }
+            50% { transform: translateY(-12px) scale(1.06); }
+        }
+        
+        /* Subtle animation for service links */
+        .service-link {
+            display: inline-block;
+            animation: linkSlide 3s ease-in-out infinite;
+        }
+        
+        @keyframes linkSlide {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(3px); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Master-V Labs Logo">
+                <span>Master-V Labs</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>
+                <span class="animated-word">Your</span>
+                <span class="animated-word">Vision,</span><br>
+                <span class="animated-word">Our</span>
+                <span class="animated-word">Code</span>
+            </h1>
+            <p>Master-V Labs transforms your ideas into powerful digital solutions. We build websites, business systems, and games that work.</p>
+            <a href="#services" class="cta-button">Explore Our Services</a>
+        </div>
+    </section>
+
+    <!-- Services Overview Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <p class="services-subtitle">Comprehensive digital solutions tailored to your needs</p>
+            
+            <div class="services-grid">
+                <!-- Website Development -->
+                <div class="service-card">
+                    <div class="service-icon">🌐</div>
+                    <h3>Website Development</h3>
+                    <p>We build all types of websites. From simple business sites to complex web applications. Modern, fast, and mobile-friendly.</p>
+                    <a href="services/web-development.html" class="service-link">Learn More →</a>
+                </div>
+                
+                <!-- Business Systems -->
+                <div class="service-card">
+                    <div class="service-icon">💼</div>
+                    <h3>Business Systems</h3>
+                    <p>Custom software for your business needs. Inventory management, booking systems, and automation tools.</p>
+                    <a href="services/business-systems.html" class="service-link">Learn More →</a>
+                </div>
+                
+                <!-- Game Development -->
+                <div class="service-card">
+                    <div class="service-icon">🎮</div>
+                    <h3>Game Development</h3>
+                    <p>We create engaging games for mobile, desktop, and web. 2D, 3D, and interactive experiences.</p>
+                    <a href="services/game-development.html" class="service-link">Learn More →</a>
+                </div>
+                
+                <!-- E-Commerce Solutions -->
+                <div class="service-card">
+                    <div class="service-icon">🛒</div>
+                    <h3>E-Commerce Solutions</h3>
+                    <p>Online stores that sell your products. Secure payment systems and easy product management.</p>
+                    <a href="services/ecommerce.html" class="service-link">Learn More →</a>
+                </div>
+                
+                <!-- Mobile Apps -->
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h3>Mobile Apps</h3>
+                    <p>Native and cross-platform mobile applications for iOS and Android that users will love.</p>
+                    <a href="services/mobile-apps.html" class="service-link">Learn More →</a>
+                </div>
+                
+                <!-- Technical Consulting -->
+                <div class="service-card">
+                    <div class="service-icon">🔧</div>
+                    <h3>Technical Consulting</h3>
+                    <p>Not sure what you need? We help plan your project and choose the right technology.</p>
+                    <a href="services/consulting.html" class="service-link">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Start Your Project?</h2>
+            <p>Let's discuss your ideas and bring them to life with the right technology solution</p>
+            <a href="contact.html" class="cta-button">Get Started Today</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Master-V Labs. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add scroll effect to navigation
+            window.addEventListener('scroll', function() {
+                const nav = document.querySelector('nav');
+                if (window.scrollY > 100) {
+                    nav.style.background = 'rgba(10, 23, 78, 0.98)';
+                } else {
+                    nav.style.background = 'rgba(10, 23, 78, 0.95)';
+                }
+            });
+            
+            // Randomize animation delays for more dynamic effect
+            const animatedWords = document.querySelectorAll('.animated-word');
+            animatedWords.forEach((word, index) => {
+                const randomDelay = Math.random() * 2;
+                word.style.animationDelay = `${randomDelay}s`;
+            });
+        });
+    </script>
+</body>
+</html>

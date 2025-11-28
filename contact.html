@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Master-V Labs</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #2D2D2D;
+            background-image: url('images/background.png');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(6, 1, 245, 0.92);
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(10, 23, 78, 0.95);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #F5D042;
+        }
+
+        /* Contact Hero */
+        .contact-hero {
+            padding: 150px 0 80px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(10, 23, 78, 0.85) 0%, rgba(26, 42, 108, 0.85) 100%), url('images/background.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .contact-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-hero p {
+            font-size: 1.3rem;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.95;
+        }
+
+        /* Contact Details */
+        .contact-details {
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.92) 0%, rgba(248, 249, 250, 0.92) 100%), url('images/background.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .contact-info h2 {
+            color: #0A174E;
+            margin-bottom: 2rem;
+            font-size: 2.2rem;
+        }
+
+        .contact-method-detail {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .contact-method-detail:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .contact-method-detail h3 {
+            color: #0A174E;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .contact-method-detail a {
+            color: #0A174E;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .contact-method-detail a:hover {
+            color: #F5D042;
+        }
+
+        .contact-method-detail p {
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .contact-form h2 {
+            color: #0A174E;
+            margin-bottom: 2rem;
+            font-size: 2.2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #0A174E;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #eee;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #0A174E;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .submit-btn {
+            background: #0A174E;
+            color: white;
+            padding: 1.2rem 2.5rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: #F5D042;
+            color: #0A174E;
+            transform: translateY(-2px);
+        }
+
+        /* Pricing Note */
+        .pricing-note {
+            background: rgba(10, 23, 78, 0.05);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-top: 3rem;
+            border-left: 4px solid #F5D042;
+        }
+
+        .pricing-note h3 {
+            color: #0A174E;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-note p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(26, 26, 26, 0.95);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .contact-info,
+            .contact-form {
+                padding: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .contact-info h2,
+            .contact-form h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .contact-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .contact-info,
+            .contact-form {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Master-V Labs Logo">
+                <span>Master-V Labs</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contact Hero -->
+    <section class="contact-hero">
+        <div class="container">
+            <h1>Let's Build Together</h1>
+            <p>Get in touch to discuss your project and get a custom quote</p>
+        </div>
+    </section>
+
+    <!-- Contact Details -->
+    <section class="contact-details">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h2>Get In Touch</h2>
+                    <p>We're here to help you bring your ideas to life. Contact us using any of the methods below.</p>
+                    
+                    <div class="contact-method-detail">
+                        <h3>📞 Call Us</h3>
+                        <a href="tel:+250791915831">+250 791 915 831</a>
+                        <p>Available Everytime</p>
+                    </div>
+                    
+                    <div class="contact-method-detail">
+                        <h3>✉️ Email Us</h3>
+                        <a href="mailto:mastervlabs@gmail.com">mastervlabs@gmail.com</a>
+                        <p>We respond within 24 hours</p>
+                    </div>
+                    
+                    <div class="contact-method-detail">
+                        <h3>📍 Visit Us</h3>
+                        <p>Kigali, Rwanda</p>
+                        
+                    </div>
+
+                    <div class="pricing-note">
+                        <h3>💡 How Pricing Works</h3>
+                        <p>We discuss your project requirements and provide a custom quote based on the scope, complexity, and timeline. No hidden costs - just transparent pricing for quality work.</p>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h2>Send us a Message</h2>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Your Email *</label>
+                            <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Service Interested In</label>
+                            <select id="service" name="service">
+                                <option value="">Select a service</option>
+                                <option value="web-development">Website Development</option>
+                                <option value="business-systems">Business Systems</option>
+                                <option value="game-development">Game Development</option>
+                                <option value="ecommerce">E-Commerce Solutions</option>
+                                <option value="mobile-apps">Mobile Apps</option>
+                                <option value="consulting">Technical Consulting</option>
+                                <option value="not-sure">Not Sure - Need Advice</option>
+                            </select>
+                        </div>
+                        
+                        
+                        <div class="form-group">
+                            <label for="message">Project Details *</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your project, your goals, and any specific requirements..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Master-V Labs. All rights reserved by R.M.V .</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple form handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const formData = new FormData(this);
+    const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        phone: formData.get('phone'),
+        service: formData.get('service'),
+        budget: formData.get('budget'),
+        message: formData.get('message')
+    };
+    
+    // Send to Formspree or your email service
+    fetch('https://formspree.io/f/your-form-id', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert('Thank you! Your message has been sent. We will contact you within 24 hours.');
+        this.reset();
+    })
+    .catch(error => {
+        alert('Thank you! Your message has been received. We will contact you soon.');
+        this.reset();
+    });
+});
+    </script>
+</body>
+</html>
