@@ -1,19 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://mastervlabs.dev/</loc>
+    <loc>https://2004-maste.github.io/master-v-labs/</loc>
     <lastmod>2024-01-15</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://mastervlabs.dev/contact.html</loc>
+    <loc>https://2004-maste.github.io/master-v-labs/contact.html</loc>
     <lastmod>2024-01-15</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mastervlabs.dev/services/web-development.html</loc>
+    <loc>https://2004-maste.github.io/master-v-labs/services/web-development.html</loc>
     <lastmod>2024-01-15</lastmod>
     <priority>0.7</priority>
   </url>
-  <!-- Add all other service pages -->
+  <url>
+    <loc>https://2004-maste.github.io/master-v-labs/services/business-systems.html</loc>
+    <lastmod>2024-01-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://2004-maste.github.io/master-v-labs/services/game-development.html</loc>
+    <lastmod>2024-01-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://2004-maste.github.io/master-v-labs/services/ecommerce.html</loc>
+    <lastmod>2024-01-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://2004-maste.github.io/master-v-labs/services/mobile-apps.html</loc>
+    <lastmod>2024-01-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://2004-maste.github.io/master-v-labs/services/consulting.html</loc>
+    <lastmod>2024-01-15</lastmod>
+    <priority>0.7</priority>
+  </url>
 </urlset>
