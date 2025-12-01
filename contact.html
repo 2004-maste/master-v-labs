@@ -29,7 +29,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(6, 1, 245, 0.92);
+            background: rgba(255, 255, 255, 0.92);
             z-index: -1;
         }
 
@@ -177,6 +177,7 @@
             padding: 3rem;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
         }
 
         .contact-form h2 {
@@ -185,55 +186,30 @@
             font-size: 2.2rem;
         }
 
-        .form-group {
-            margin-bottom: 1.5rem;
+        .email-cta {
+            padding: 2rem 0;
         }
 
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
+        .email-cta h3 {
             color: #0A174E;
-            font-weight: 500;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
         }
 
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid #eee;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-            font-family: 'Arial', sans-serif;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: #0A174E;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .submit-btn {
+        .email-button {
+            display: inline-block;
             background: #0A174E;
             color: white;
-            padding: 1.2rem 2.5rem;
-            border: none;
+            padding: 15px 30px;
+            text-decoration: none;
             border-radius: 8px;
+            font-weight: bold;
             font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            width: 100%;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
         }
 
-        .submit-btn:hover {
+        .email-button:hover {
             background: #F5D042;
             color: #0A174E;
             transform: translateY(-2px);
@@ -264,6 +240,21 @@
             color: white;
             text-align: center;
             padding: 2rem 0;
+        }
+
+        .github-badge {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        .github-badge a {
+            color: #aaa;
+            text-decoration: none;
+        }
+
+        .github-badge a:hover {
+            color: #F5D042;
         }
 
         /* Responsive Design */
@@ -305,10 +296,6 @@
             }
         }
     </style>
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/logo.png">
-    <link rel="apple-touch-icon" href="images/logo.png">
 </head>
 <body>
     <!-- Navigation -->
@@ -357,7 +344,6 @@
                     <div class="contact-method-detail">
                         <h3>📍 Visit Us</h3>
                         <p>Kigali, Rwanda</p>
-                        
                     </div>
 
                     <div class="pricing-note">
@@ -368,54 +354,15 @@
                 
                 <div class="contact-form">
                     <h2>Send us a Message</h2>
-                    <div style="text-align: center; padding: 3rem;">
-                    <h3>📧 Email Us Directly</h3>
-                    <p>For fastest response, email us at:</p>
-                    <a href="mailto:rugiravivien@gmail.com?subject=Project Inquiry&body=Hi Master-V Labs,%0A%0AI'm interested in your services.%0A%0AProject details:%0A- %0A- %0A%0ABudget: %0ATimeline: %0A%0AThank you!" 
-                    class="cta-button" 
-                    style="display: inline-block; margin-top: 1rem;">
-                    ✉️ Email rugiravivien@gmail.com
-               </a>
-        <p style="margin-top: 1rem; color: #666;">We respond within 24 hours</p>
-    </div>
-</div>
-    
-    <div class="form-group">
-        <label for="name">Your Name *</label>
-        <input type="text" id="name" name="name" required placeholder="Enter your full name">
-    </div>
-    
-    <div class="form-group">
-        <label for="email">Your Email *</label>
-        <input type="email" id="email" name="email" required placeholder="Enter your email address">
-    </div>
-    
-    <div class="form-group">
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
-    </div>
-    
-    <div class="form-group">
-        <label for="service">Service Interested In</label>
-        <select id="service" name="service">
-            <option value="">Select a service</option>
-            <option value="web-development">Website Development</option>
-            <option value="business-systems">Business Systems</option>
-            <option value="game-development">Game Development</option>
-            <option value="ecommerce">E-Commerce Solutions</option>
-            <option value="mobile-apps">Mobile Apps</option>
-            <option value="consulting">Technical Consulting</option>
-            <option value="not-sure">Not Sure - Need Advice</option>
-        </select>
-    </div>
-    
-    <div class="form-group">
-        <label for="message">Project Details *</label>
-        <textarea id="message" name="message" placeholder="Tell us about your project, your goals, and any specific requirements..." required></textarea>
-    </div>
-    
-    <button type="submit" class="submit-btn">Send Message</button>
-</form>
+                    <div class="email-cta">
+                        <h3>📧 Email Us Directly</h3>
+                        <p>For fastest response, email us with your project details:</p>
+                        <a href="mailto:rugiravivien@gmail.com?subject=Project Inquiry - Master-V Labs&body=Hi Master-V Labs,%0A%0AI'm interested in your services.%0A%0AProject Details:%0A- %0A- %0A%0ABudget Range:%0ATimeline:%0A%0AThank you!" 
+                           class="email-button">
+                           ✉️ Email rugiravivien@gmail.com
+                        </a>
+                        <p style="margin-top: 1rem; color: #666;">We'll respond within 24 hours with a custom quote</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -424,36 +371,13 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2025 Master-V Labs. All rights reserved by R.M.V .</p>
+            <p>&copy; 2025 Master-V Labs. All rights reserved by Rugira Manzi Vivien.</p>
+            <div class="github-badge">
+                <a href="https://github.com/2004-maste/master-v-labs" target="_blank">
+                    ⚡ Hosted on GitHub Pages
+                </a>
+            </div>
         </div>
     </footer>
-
-    <a href="https://wa.me/250791915831?text=Hi%20Master-V%20Labs,%20I%20need%20help%20with..." 
-   class="whatsapp-float" 
-   target="_blank">
-   💬 WhatsApp
-</a>
-
-<style>
-.whatsapp-float {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #25D366;
-    color: white;
-    padding: 12px 20px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
-    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
-    z-index: 1000;
-    animation: pulse 2s infinite;
-}
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-}
-</style>
 </body>
 </html>
